@@ -11,7 +11,6 @@
   let el = $state(undefined);
   let collection = $state(new CollectionAPI(blocks));
 
-  // NOTE: we currently can't reinitialize the collection, as we will loose the selected index
   $effect(() => {
     collection.init(blocks);
   });
