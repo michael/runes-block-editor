@@ -14,10 +14,10 @@
   let container = new ContainerAPI(blocks);
 
   // When new data arrives from parent we reinit the container
-	$effect(() => {
+  $effect(() => {
     container.init(blocks);
     console.log('We received new data', blocks);
-	});
+  });
 
   function clearSelection(e) {
     if (el && !el.contains(e.target) && !e.defaultPrevented) {
