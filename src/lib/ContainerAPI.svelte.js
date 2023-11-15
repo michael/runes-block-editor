@@ -1,7 +1,7 @@
 // @ts-nocheck
 
-// A simple API for manipulating collections of blocks
-export default class CollectionAPI {
+// A simple API for manipulating an array of blocks (=container)
+export default class ContainerAPI {
   blocks = $state([]);
   selected_index = $state(undefined);
   
@@ -13,6 +13,9 @@ export default class CollectionAPI {
     this.selected_index = undefined;
   }
 
+  // Possibly to allow fine grained reactivity on block level, we might want to iterate
+  // over the raw data (blocks) and instantiate classes for each block (e.g. this.blocks = [new Paragraph(...),  ...])
+  // But then just operating on plain JS objects also has it's beauty. Hmm...
   init(blocks) {
     this.blocks = blocks;
     // In case the current selection becomes invalid, set it to undefined.

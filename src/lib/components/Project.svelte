@@ -1,7 +1,7 @@
 <script>
   // @ts-nocheck
   import EntryAPI from '$lib/EntryAPI.svelte.js';
-  import Collection from './Collection.svelte';
+  import Container from './Container.svelte';
 
   let { data } = $props();
   let entry = $state(new EntryAPI(data));
@@ -20,6 +20,6 @@
   Name: <input type="text" bind:value={entry.props.name} />
 </div>
 
-<Collection bind:blocks={entry.props.body}></Collection>
+<Container bind:blocks={entry.props.body} />
 
 <pre>{JSON.stringify(entry.props,null,2)}</pre>
